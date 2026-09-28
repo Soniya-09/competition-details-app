@@ -1,0 +1,40 @@
+{
+  "name": "feedants-competition-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Competition Details API for Feedants (Express + MongoDB)",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "dev:memory": "node scripts/dev-memory.js",
+    "seed": "node scripts/seed.js",
+    "reconcile": "node scripts/reconcile.js",
+    "loadtest": "node scripts/loadtest.js",
+    "test": "node --test --test-concurrency=1 --test-timeout=120000 \"tests/**/*.test.js\""
+  },
+  "dependencies": {
+    "compression": "^1.8.2",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.10.2",
+    "multer": "^2.4.0",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
+    "socket.io": "^4.8.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "expect": "^30.5.2",
+    "mongodb-memory-server": "^11.3.0",
+    "socket.io-client": "^4.8.4",
+    "supertest": "^7.3.0"
+  }
+}
