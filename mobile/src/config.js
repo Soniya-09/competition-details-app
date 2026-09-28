@@ -8,7 +8,12 @@ function resolveApiUrl() {
   if (Platform.OS === 'web' && typeof window !== 'undefined') {
     return `${window.location.protocol}//${window.location.hostname}:${API_PORT}`;
   }
-  const devHost = Constants.expoConfig?.hostUri?.split(':')[0];
+  // hostUri isn't always populated in Expo Go, so fall back to the debugger / linking host
+  const hostWithPort =
+    Constants.expoConfig?.hostUri ??
+    Constants.expoGoConfig?.debuggerHost ??
+    Constants.linkingUri?.replace(/^\w+:\/\//, '');
+  const devHost = hostWithPort?.split(/[:/]/)[0];
   if (devHost) return `http://${devHost}:${API_PORT}`;
   return Platform.OS === 'android' ? `http://10.0.2.2:${API_PORT}` : `http://localhost:${API_PORT}`;
 }

@@ -238,4 +238,4 @@ The tests cover each of these: 60 users racing for 19 seats (exactly 19 succeed)
 
 ## Screen recording
 
-*(Add link here.)*
+[Watch the demo on Google Drive](https://drive.google.com/file/d/1V54k-UamkTzwYldCblyMQ-tLNstQRkEf/view?usp=drive_link)
